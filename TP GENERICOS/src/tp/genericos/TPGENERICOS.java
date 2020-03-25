@@ -18,7 +18,7 @@ public class TPGENERICOS {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        gen<String> ab=new gen<String>();
+        NodesList<String> ab=new NodesList<String>();
   
     /*  String h="hola";
         String a="chau";
@@ -35,8 +35,8 @@ public class TPGENERICOS {
         ab.add("a");
        
         ab.add("ah");*/
-      objeto<String>a=new objeto<String>("hola");
-      objeto<String>abc=new objeto<String>("hola");
+      node<String>a=new node<String>("hola");
+      node<String>abc=new node<String>("hola");
       abc.setSig(a);
      //   System.out.println(ab.removeLast());
         System.out.println(ab.getNodes());

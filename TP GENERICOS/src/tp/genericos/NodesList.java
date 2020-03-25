@@ -12,29 +12,30 @@ import java.util.List;
 /**
  *
  * @author Facu
+ * @param <N>
  */
-public class gen<N extends Comparable> {
+public class NodesList<N extends Comparable> {
 
-    objeto<N> nodes;
+    node<N> nodes;
 
     public void add(N obj) {
 
         if (this.nodes == null) {
-            this.nodes = new objeto<N>(obj);
+            this.nodes = new node<N>(obj);
         } else {
-            objeto<N> ob = this.nodes;
+            node<N> ob = this.nodes;
 
             while (ob.getSig() != null) {
                 ob = ob.getSig();
             }
-            objeto<N> newValue = new objeto<N>(obj);
+            node<N> newValue = new node<N>(obj);
             ob.setSig(newValue);
         }
 
      
     }
 
-    public objeto<N> getNodes() {
+    public node<N> getNodes() {
         return nodes;
     }
 
@@ -42,7 +43,7 @@ public class gen<N extends Comparable> {
         if (this.nodes == null) {
             System.out.println("no hay cosas");
         } else {
-            objeto<N> ob = this.nodes;
+            node<N> ob = this.nodes;
             do {
                 System.out.println(ob.getObjetoPrincipal());
                 System.out.println("------------");
@@ -53,12 +54,12 @@ public class gen<N extends Comparable> {
 
     }
 
-    public boolean isAnObjectInsideTheArray(objeto<N> obj) {
+    public boolean isAnObjectInsideTheArray(node<N> obj) {
 
         if (this.nodes == null) {
             return false;
         } else {
-            objeto<N> nodeToCompare = this.getNodes();
+            node<N> nodeToCompare = this.getNodes();
             do {
                 if (nodeToCompare.equals(obj)) {
                     return true;
@@ -74,7 +75,7 @@ public class gen<N extends Comparable> {
         if (this.nodes == null) {
             return false;
         } else {
-            objeto<N> baseNode = this.getNodes();
+            node<N> baseNode = this.getNodes();
             do {
 
                 if (baseNode.equalsValue(parameterObjectToTest)) {
@@ -94,12 +95,12 @@ public class gen<N extends Comparable> {
             throw new Exception();//crear propias excepciones
         } else {
 
-            objeto maximum = this.getNodes();
+            node maximum = this.getNodes();
 
             if (maximum.getSig() == null) {
                 return (N) maximum.getObjetoPrincipal();
             }
-            objeto sig = this.getNodes().getSig();
+            node sig = this.getNodes().getSig();
 
             do {
 
@@ -121,12 +122,12 @@ public class gen<N extends Comparable> {
             throw new Exception();//crear propias excepciones
         } else {
 
-            objeto minimum = this.getNodes();
+            node minimum = this.getNodes();
 
             if (minimum.getSig() == null) {
                 return (N) minimum.getObjetoPrincipal();
             }
-            objeto sig = this.getNodes().getSig();
+            node sig = this.getNodes().getSig();
 
             do {
                 if (minimum.compareTo(sig) > 0) {
@@ -140,8 +141,8 @@ public class gen<N extends Comparable> {
 
     }
 
-    public objeto removeLast() {
-        objeto nodeBase = this.getNodes();
+    public node removeLast() {
+        node nodeBase = this.getNodes();
 
         if (nodeBase == null) {
             return null;
@@ -153,19 +154,19 @@ public class gen<N extends Comparable> {
             while (nodeBase.getSig().getSig() != null) {
                 nodeBase = nodeBase.getSig();
             }
-                objeto lastNode;
+                node lastNode;
                 lastNode = nodeBase.getSig();
                 nodeBase.setSig(null);
             
             return lastNode;
         }
     }
-    public objeto getFirst() {
+    public node getFirst() {
         return this.getNodes();
     }
     public int size() {
         int size=0;
-         objeto nodeBase = this.getNodes();
+         node nodeBase = this.getNodes();
         while (nodeBase!=null) {
            size +=1;
                     nodeBase=nodeBase.getSig();

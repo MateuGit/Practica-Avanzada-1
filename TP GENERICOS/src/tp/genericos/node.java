@@ -13,33 +13,33 @@ import java.util.Objects;
  * @author Facu
  * @param <T>
  */
-public class objeto<T extends Comparable> {
+public class node<T extends Comparable> {
     private T objetoPrincipal;
-    private objeto<T> sig;   
+    private node<T> sig;   
 
-    public objeto(T objetoPrincipal) {
+    public node(T objetoPrincipal) {
         this.objetoPrincipal = objetoPrincipal;
     }
 
-    public objeto() {
+    public node() {
     }
     
-    public objeto createWithValue(T objetoPrincipal) {
-       return new objeto(objetoPrincipal);
+    public node createWithValue(T objetoPrincipal) {
+       return new node(objetoPrincipal);
     }
     
-    public objeto createWithoutValues() {
-        return new objeto();
+    public node createWithoutValues() {
+        return new node();
     }
     
     
  
     
-    public objeto<T> getSig() {
+    public node<T> getSig() {
         return sig;
     }
 
-    public void setSig(objeto<T> sig) {
+    public void setSig(node<T> sig) {
         this.sig = sig;
     }
 
@@ -64,7 +64,7 @@ public class objeto<T extends Comparable> {
     public int compareTo(T value) {
         return objetoPrincipal.compareTo(value);
     }
-     public int compareTo(objeto<T> value) {
+     public int compareTo(node<T> value) {
         return objetoPrincipal.compareTo(value.getObjetoPrincipal());
     }
 
@@ -86,7 +86,7 @@ public class objeto<T extends Comparable> {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final objeto<?> other = (objeto<?>) obj;
+        final node<?> other = (node<?>) obj;
         if (this.objetoPrincipal==other.objetoPrincipal && this.sig==other.sig) {           
             return true;
         }
