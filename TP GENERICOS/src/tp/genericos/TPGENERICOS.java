@@ -18,35 +18,22 @@ public class TPGENERICOS {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-        NodesList<String> ab=new NodesList<String>();
-  
-    /*  String h="hola";
-        String a="chau";
-        System.out.println(a.compareTo(h));*/
-        
-        ab.add("a");
-       ab.add("bb");
-         ab.add("z");
-         ab.add("Z");
-        ab.add("kkkk"); 
-        /*ab.add("ac");
-        ab.add("ad");
-        ab.add("ag");
-        ab.add("a");
-       
-        ab.add("ah");*/
-      node<String>a=new node<String>("hola");
-      node<String>abc=new node<String>("hola");
-      abc.setSig(a);
-     //   System.out.println(ab.removeLast());
+        NodesList<String> ab = new NodesList<String>();
+        ab.add("agustin");
+        ab.add("bravo");
+        ab.add("zeta");
+        ab.add("Zet");
+        ab.add("franco");
+        ab.add("acz");
+
+        System.out.println(ab.removeLast());
         System.out.println(ab.getNodes());
         System.out.println(ab.size());
-      //  System.out.println(ab.isAValueInsideTheArray("a"));
+        System.out.println(ab.isAValueInsideTheArray("a"));
 
-       // System.out.println(ab.max());
-        
-       // ab.showAll();
-        
+        System.out.println(ab.max());
+
+         ab.showAll();
     }
-    
+
 }
